@@ -73,14 +73,14 @@ def create_tf_example(group, path, label_map):
         ymaxs.append(row["ymax"] / height)
         #classes_text.append(row["class"].encode("utf8"))
         classes_text.append(str(row["class"]).encode("utf8"))
-        #class_index = label_map.get(row["class"])
-        '''assert (
+        class_index = label_map.get(row["class"])
+        assert (
             class_index is not None
         ), "class label: `{}` not found in label_map: {}".format(
             row["class"], label_map
-        )'''
-        #classes.append(class_index)
-        classes.append(row["class"])
+        )
+        classes.append(class_index)
+        #classes.append(row["class"])
 
     tf_example = tf.train.Example(
         features=tf.train.Features(

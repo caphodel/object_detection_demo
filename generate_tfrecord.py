@@ -43,6 +43,8 @@ class_int = {}
 cint = 0
 
 def class_text_to_int(row_label):
+    global class_int
+    global cint
     if row_label in class_int:
         return class_int.get(row_label)
     else:

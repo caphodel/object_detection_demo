@@ -4,3 +4,4 @@ __pycache__
 .vscode/
 models/*
 tmp/
+/frozen_inference_graph.pb

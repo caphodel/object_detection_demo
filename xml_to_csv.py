@@ -105,7 +105,7 @@ def main():
         for i, class_name in enumerate(classes_names):
             pbtxt_content = (
                 pbtxt_content
-                + "item {{\n    id: {0}\n    name: '{1}'\n    label: '{1}'\n    display_name: '{1}'\n}}\n\n".format(
+                + "item {{\n    id: {0}\n    name: '{1}'\n    class: '{1}'\n}}\n\n".format(
                     i + 1, class_name
                 )
             )

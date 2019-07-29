@@ -5,3 +5,4 @@ __pycache__
 models/*
 tmp/
 /frozen_inference_graph.pb
+node_modules/

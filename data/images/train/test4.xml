@@ -1,7 +1,7 @@
 <annotation>
 	<folder>train</folder>
-	<filename>test4.bmp</filename>
-	<path>C:\develop\tsobj_git\data\images\train\test4.bmp</path>
+	<filename>test4.jpg</filename>
+	<path>C:\develop\tsobj_git\data\images\train\test4.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -17,10 +17,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>70</xmin>
-			<ymin>10</ymin>
-			<xmax>187</xmax>
-			<ymax>228</ymax>
+			<xmin>71</xmin>
+			<ymin>9</ymin>
+			<xmax>186</xmax>
+			<ymax>227</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -29,10 +29,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>228</xmin>
-			<ymin>8</ymin>
+			<xmin>229</xmin>
+			<ymin>7</ymin>
 			<xmax>321</xmax>
-			<ymax>224</ymax>
+			<ymax>222</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -43,8 +43,8 @@
 		<bndbox>
 			<xmin>337</xmin>
 			<ymin>8</ymin>
-			<xmax>455</xmax>
-			<ymax>228</ymax>
+			<xmax>456</xmax>
+			<ymax>227</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -53,10 +53,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>443</xmin>
+			<xmin>444</xmin>
 			<ymin>203</ymin>
-			<xmax>464</xmax>
-			<ymax>229</ymax>
+			<xmax>463</xmax>
+			<ymax>227</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -67,8 +67,8 @@
 		<bndbox>
 			<xmin>471</xmin>
 			<ymin>10</ymin>
-			<xmax>576</xmax>
-			<ymax>229</ymax>
+			<xmax>575</xmax>
+			<ymax>227</ymax>
 		</bndbox>
 	</object>
 </annotation>

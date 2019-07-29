@@ -39,6 +39,18 @@ flags.DEFINE_string(
 flags.DEFINE_string("img_path", "", "Path to images")
 FLAGS = flags.FLAGS
 
+class_int = {}
+cint = 0
+
+def class_text_to_int(row_label):
+    global class_int
+    global cint
+    if row_label in class_int:
+        return class_int.get(row_label)
+    else:
+        class_int[row_label] = cint
+        cint += 1
+        return class_int[row_label]
 
 def split(df, group):
     data = namedtuple("data", ["filename", "object"])
@@ -73,14 +85,14 @@ def create_tf_example(group, path, label_map):
         ymaxs.append(row["ymax"] / height)
         #classes_text.append(row["class"].encode("utf8"))
         classes_text.append(str(row["class"]).encode("utf8"))
-        #class_index = label_map.get(row["class"])
+        class_index = class_text_to_int(row["class"])
         '''assert (
             class_index is not None
         ), "class label: `{}` not found in label_map: {}".format(
             row["class"], label_map
         )'''
-        #classes.append(class_index)
-        classes.append(row["class"])
+        classes.append(class_index)
+        #classes.append(row["class"])
 
     tf_example = tf.train.Example(
         features=tf.train.Features(

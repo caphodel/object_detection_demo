@@ -1,7 +1,7 @@
 <annotation>
-	<folder>test</folder>
-	<filename>8.jpg</filename>
-	<path>C:\develop\tsobj_git\data\images\test\8.jpg</path>
+	<folder>train</folder>
+	<filename>1.jpg</filename>
+	<path>C:\develop\tsobj_git\data\images\train\1.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -17,9 +17,9 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>93</xmin>
+			<xmin>95</xmin>
 			<ymin>49</ymin>
-			<xmax>791</xmax>
+			<xmax>792</xmax>
 			<ymax>609</ymax>
 		</bndbox>
 	</object>

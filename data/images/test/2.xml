@@ -1,26 +1,26 @@
 <annotation>
 	<folder>test</folder>
-	<filename>8.jpg</filename>
-	<path>C:\develop\tsobj_git\data\images\test\8.jpg</path>
+	<filename>2.jpg</filename>
+	<path>C:\develop\tsobj_git\data\images\test\2.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
 	<size>
-		<width>900</width>
-		<height>700</height>
+		<width>560</width>
+		<height>560</height>
 		<depth>3</depth>
 	</size>
 	<segmented>0</segmented>
 	<object>
-		<name>8</name>
+		<name>2</name>
 		<pose>Unspecified</pose>
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>93</xmin>
-			<ymin>49</ymin>
-			<xmax>791</xmax>
-			<ymax>609</ymax>
+			<xmin>256</xmin>
+			<ymin>169</ymin>
+			<xmax>345</xmax>
+			<ymax>300</ymax>
 		</bndbox>
 	</object>
 </annotation>

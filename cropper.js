@@ -24,22 +24,25 @@ async function fromDir(startPath, filter) {
             }
             else if (filename.indexOf(filter) >= 0) {
                 fileData.push(filename)
+            }
+            else if (filter == undefined) {
+                fileData.push(filename)
             };
         };
         resolve(fileData)
     });
 };
 
-function resize(xml, val) {
-    var r = JSON.parse(convert.xml2json(xml, { compact: true, spaces: 4 }))
-    var mainImage = new Jimp(900, 700, function (err, image) {
+function resize(file, val) {
+    var mainImage = new Jimp(900, 700, 0xffffffff, function (err, image) {
         
     });
-    Jimp.read(r.annotation.path._text, (err, img) => {
+    console.log(path.resolve(__dirname, val))
+    Jimp.read(path.resolve(__dirname, val), (err, img) => {
         if (err)
             console.error(err);
         else {
-            var sz = r.annotation.size
+            /*var sz = r.annotation.size
             var bb = r.annotation.object.bndbox
             var x1 = parseInt(bb.xmin._text) - 20
             var y1 = parseInt(bb.ymin._text) - 20
@@ -53,17 +56,35 @@ function resize(xml, val) {
                 x2 = sz.width
             if (y2 > parseInt(sz.height))
                 y2 = sz.height
-            img.crop(x1, y1, x2, y2)
-            mainImage.blit(img, 0, 0)
-                .write('./data/images/test/a' + path.basename(val).split('.')[0] + '.jpg'); // save
+            img.crop(x1, y1, x2, y2)*/
+            if (img.bitmap.width > 900 || img.bitmap.height > 700) {
+                var byWidth = img.bitmap.width > img.bitmap.height
+                if (byWidth) {
+                    img.resize(900, Jimp.AUTO)
+                    mainImage.blit(img, 0, 350-(img.bitmap.height/2))
+                        .write(pathDir + '/a' + path.basename(val).split('.')[0] + '.jpg');
+                }
+                else {
+                    img.resize(Jimp.AUTO, 700)
+                    mainImage.blit(img, 450-(img.bitmap.width/2), 0)
+                        .write(pathDir + '/a' + path.basename(val).split('.')[0] + '.jpg');
+                }
+            }
+            else {
+                mainImage.blit(img, 450-(img.bitmap.width/2), 350-(img.bitmap.height/2))
+                    .write(pathDir + '/a' + path.basename(val).split('.')[0] + '.jpg');
+            }
+            /*mainImage.blit(img, 0, 0)
+                .write(pathDira + '/a' + path.basename(val).split('.')[0] + '.jpg'); // save*/
         }
     })
 }
 
-fromDir('./data/images/test', '.xml').then((data) => {
+var pathDir = './data/images/train/'
+
+fromDir(pathDir).then((data) => {
     for (var i = 0; i < data.length; i++) {
         var val = data[i]
-        var xml = fs.readFileSync(path.resolve(__dirname, val), 'utf-8')
-        resize(xml, val)
+        resize(val, val)
     }
 }).catch(console.log)

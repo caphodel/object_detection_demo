@@ -62,17 +62,17 @@ function resize(file, val) {
                 if (byWidth) {
                     img.resize(900, Jimp.AUTO)
                     mainImage.blit(img, 0, 350-(img.bitmap.height/2))
-                        .write(pathDir + '/a' + path.basename(val).split('.')[0] + '.jpg');
+                        .write(pathDir + '/' + path.basename(val).split('.')[0] + '.jpg');
                 }
                 else {
                     img.resize(Jimp.AUTO, 700)
                     mainImage.blit(img, 450-(img.bitmap.width/2), 0)
-                        .write(pathDir + '/a' + path.basename(val).split('.')[0] + '.jpg');
+                        .write(pathDir + '/' + path.basename(val).split('.')[0] + '.jpg');
                 }
             }
             else {
                 mainImage.blit(img, 450-(img.bitmap.width/2), 350-(img.bitmap.height/2))
-                    .write(pathDir + '/a' + path.basename(val).split('.')[0] + '.jpg');
+                    .write(pathDir + '/' + path.basename(val).split('.')[0] + '.jpg');
             }
             /*mainImage.blit(img, 0, 0)
                 .write(pathDira + '/a' + path.basename(val).split('.')[0] + '.jpg'); // save*/
@@ -80,7 +80,7 @@ function resize(file, val) {
     })
 }
 
-var pathDir = './data/images/train/'
+var pathDir = './data/images/test/'
 
 fromDir(pathDir).then((data) => {
     for (var i = 0; i < data.length; i++) {
